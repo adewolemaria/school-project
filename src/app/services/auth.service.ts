@@ -29,7 +29,6 @@ export class AuthService {
     this.afAuth.auth.signInWithEmailAndPassword(email, password)
     .then(value => {
       console.log('Nice, it worked!');
-      console.log(value);
       this.router.navigateByUrl('/students');
     })
     .catch(err => {
@@ -50,5 +49,18 @@ export class AuthService {
 
   private oAuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider);
+  }
+
+  isUserAuthenticated() {
+    return this.afAuth.authState
+      .take(1)
+      .map(authState => !!authState)
+      .do(authenticated => {
+        if (authenticated) {
+          return true;
+        } else {
+          return false;
+        }
+      });
   }
 }

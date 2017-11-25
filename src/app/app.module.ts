@@ -21,6 +21,7 @@ import { MentorGuard } from './services/mentor-guard.service';
 import { StudentGuard } from './services/student-guard.service';
 import { UserService } from './services/user.service';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
 
 var firebaseConfig = {
   apiKey: "AIzaSyBNA6DNdTd9XzN29_Ag1H1AwBwvSzRy4Nc",
@@ -39,7 +40,8 @@ var firebaseConfig = {
     MentorComponent,
     LoginComponent,
     EmailComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

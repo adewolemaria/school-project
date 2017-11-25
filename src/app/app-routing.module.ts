@@ -4,12 +4,14 @@ import { StudentComponent } from './student/student.component';
 import { MentorComponent } from './mentor/mentor.component';
 import { EmailComponent } from './email/email.component';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { MentorGuard } from './services/mentor-guard.service';
 import { StudentGuard } from './services/student-guard.service';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'login-email', component: EmailComponent },
   { path: 'students', component: StudentComponent, canActivate: [AuthGuard] },
