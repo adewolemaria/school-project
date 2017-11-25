@@ -1,0 +1,20 @@
+
+<div class="form-container" id="toolbar">
+    <header [@fallIn]="state">
+      <button (click)="logout()" class="basic-btn">Logout</button>
+    </header>
+    <div id="page" [@moveInLeft]="state">
+      <h4>Mentors List</h4>
+      <ul *ngFor="let mentor of mentors | async">
+        <li>Name: {{ mentor.data.displayName }}</li>
+        <li>
+          <ul>
+            <li>Type: {{ mentor.data.type }}</li>
+            <li>Center: {{ mentor.data.center }}</li>
+          </ul>
+        </li>
+      </ul>
+      <img src="assets/images/filler.png" />
+    </div>
+    
+</div>
